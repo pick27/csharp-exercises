@@ -26,10 +26,16 @@ namespace LookForAlice
 
         public static void Main(string[] args)
         {
-            string firstSentence = "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, 'and what is the use of a book,' thought Alice 'without pictures or conversation?'";
+            // @ tells it to read this as a string literal. no need to escape characters.
+            string firstSentence = @"
+                Alice was beginning to get very tired of sitting by her sister on the bank, 
+                and of having nothing to do: once or twice she had peeped into the book her 
+                sister was reading, but it had no pictures or conversations in it, 'and what 
+                is the use of a book,' thought Alice 'without pictures or conversation?'
+            ";
             string lookForAlice;
 
-            Console.WriteLine("What string would you like to look for?");
+            Console.Write("What string would you like to look for? ");
             lookForAlice = Console.ReadLine();
 
             Console.WriteLine("Case sensitive answer: " + CaseSensitive(lookForAlice, firstSentence));

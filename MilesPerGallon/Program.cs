@@ -12,9 +12,9 @@ namespace MilesPerGallon
             Single miles, gallons, mpg;
 
             Console.WriteLine("Miles per Gallon");
-            Console.WriteLine("Miles driven:");
+            Console.Write("Miles driven? ");
             miles = Single.Parse(Console.ReadLine());
-            Console.WriteLine("Gallons used:");
+            Console.Write("Gallons used? ");
             gallons = Single.Parse(Console.ReadLine());
 
             mpg = miles / gallons;
