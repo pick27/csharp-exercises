@@ -1,0 +1,5 @@
+four score and seven years ago our fathers brought forth upon 
+i have no idea if this will read
+the whole file or just the first line
+it looks like if i see a "w" or "j" or "z" then
+it has read the whole file.
