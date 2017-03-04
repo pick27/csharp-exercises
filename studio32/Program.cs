@@ -14,7 +14,7 @@ namespace studio32
             string lookAt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan sem ut ligula scelerisque sollicitudin. Ut at sagittis augue. Praesent quis rhoncus justo. Aliquam erat volutpat. Donec sit amet suscipit metus, non lobortis massa. Vestibulum augue ex, dapibus ac suscipit vel, volutpat eget massa. Donec nec velit non ligula efficitur luctus.";
 
             // try reading from a file
-            string path = "c:\\users\\bob\\source\\repos\\csharp-exercises\\studio32\\Test.txt";
+            string path = "Test.txt";
             if (File.Exists(path))
             { 
                 lookAt = File.ReadAllText(path);
@@ -23,6 +23,7 @@ namespace studio32
             else
             {
                 Console.WriteLine("could not read from file.");
+                Console.WriteLine(path);
             }
 
             // make counts case insensitive
