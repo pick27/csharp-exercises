@@ -7,10 +7,10 @@ namespace School
 {
     public class Student
     {
-        string name;
-        int studentId;
-        int numberOfCredits;
-        double gpa;
+        private string name;
+        private readonly int studentId;
+        private int numberOfCredits;
+        private double gpa;
 
         public string Name { get; set; }
 
@@ -27,16 +27,21 @@ namespace School
             get { return gpa; }
             internal set { gpa = value; }
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} ({1})", Name, StudentId);
+        }
     }
 
 
     public class Course
     {
-        string name;
-        int courseId;
-        int numberOfCredits;
-        string instructor;
-        Student[] students;
+        private string name;
+        private readonly int courseId;
+        private int numberOfCredits;
+        private string instructor;
+        private Student[] students;
 
         public string Name { get; set; }
 
@@ -54,6 +59,11 @@ namespace School
         {
             get { return students; }
             internal set { students = value; }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} ({1})", Name, CourseId);
         }
     }
 
