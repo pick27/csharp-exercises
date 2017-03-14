@@ -43,6 +43,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloMVC33", "HelloMVC33\He
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "School", "School\School.xproj", "{C8B94AB3-BC01-44D8-9446-0C55C0F55778}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Restaurant", "Restaurant\Restaurant.xproj", "{9E4AA0D4-E5A6-42F9-A422-CB57FC4434B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{C8B94AB3-BC01-44D8-9446-0C55C0F55778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8B94AB3-BC01-44D8-9446-0C55C0F55778}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8B94AB3-BC01-44D8-9446-0C55C0F55778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E4AA0D4-E5A6-42F9-A422-CB57FC4434B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E4AA0D4-E5A6-42F9-A422-CB57FC4434B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E4AA0D4-E5A6-42F9-A422-CB57FC4434B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E4AA0D4-E5A6-42F9-A422-CB57FC4434B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
