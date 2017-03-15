@@ -5,65 +5,95 @@ using System.Threading.Tasks;
 
 namespace School
 {
-    public class Student
-    {
-        private string name;
-        private readonly int studentId;
-        private int numberOfCredits;
-        private double gpa;
-
+    public class Student {
+        private static int nextStudentId = 1;
         public string Name { get; set; }
+        int StudentId { get; set; }
+        public int NumberOfCredits { get; set; }
+        public double Gpa { get; set; }
 
-        public int StudentId { get; set; }
-
-        public int NumberOfCredits
-        {
-            get { return numberOfCredits; }
-            internal set { numberOfCredits = value; }
+        public Student(string name, int studentId,
+                int numberOfCredits, double gpa) { 
+            Name = name;
+            StudentId = studentId;
+            NumberOfCredits = numberOfCredits;
+            Gpa = gpa;
         }
 
-        public double Gpa
-        {
-            get { return gpa; }
-            internal set { gpa = value; }
+        public Student(string name, int studentId)
+            : this(name, studentId, 0, 0) { }
+
+        public Student(string name)
+            : this(name, nextStudentId) {
+            nextStudentId++;
         }
 
-        public override string ToString()
+        public void AddGrade(int courseCredits, double grade) {
+            double totalQualityScore = Gpa * NumberOfCredits;
+            NumberOfCredits += courseCredits;
+            Gpa = totalQualityScore / totalQualityScore;
+        }
+
+        public string GetGradeLevel() {
+            string gradeLevel = "";
+            if (NumberOfCredits < 30) {
+                gradeLevel = "Freshman";
+            }
+            else if (NumberOfCredits < 60) {
+                gradeLevel = "Sophomore";
+            }
+            else if (NumberOfCredits < 90) {
+                gradeLevel = "Junior";
+            }
+            else {
+                gradeLevel = "Senior";
+            }
+            return gradeLevel;
+        }
+
+        public override string ToString() {
+            return string.Format("{0} (Credits: {1}. GPA: {2})", Name, NumberOfCredits, Gpa);
+        }
+
+        public override bool Equals(object o)
         {
-            return string.Format("{0} ({1})", Name, StudentId);
+            Student studentObj = o as Student;
+            return StudentId == studentObj.StudentId;
         }
     }
 
 
-    public class Course
-    {
-        private string name;
-        private readonly int courseId;
-        private int numberOfCredits;
-        private string instructor;
-        private Student[] students;
-
+    public class Course {
+        private static int nextInstanceId = 1;
         public string Name { get; set; }
-
         public int CourseId { get; set; }
-
-        public int NumberOfCredits
-        {
-            get { return numberOfCredits; }
-            internal set { numberOfCredits = value; }
-        }
-
+        private int InstanceId { get; set; }
+        public int NumberOfCredits { get; set; }
         public string Instructor { get; set; }
+        public Student[] Students { get; set; }
 
-        public Student[] Students
-        {
-            get { return students; }
-            internal set { students = value; }
+        public Course(string name, int courseId,
+        int numberOfCredits, string instructor) {
+            Name = name;
+            CourseId = courseId;
+            NumberOfCredits = numberOfCredits;
+            Instructor = instructor;
+            InstanceId = nextInstanceId;
+            nextInstanceId++;
         }
+
+        public Course(string name, int courseId)
+            : this(name, courseId, 0, "") { }
 
         public override string ToString()
         {
-            return string.Format("{0} ({1})", Name, CourseId);
+            return string.Format("{0} (CourseID: {1}. Instructor: {2})", Name, CourseId, Instructor);
+        }
+
+        public override bool Equals(object o)
+        {
+            Course courseObj = o as Course;
+            return ((CourseId == courseObj.CourseId) && (InstanceId == courseObj.InstanceId));
         }
     }
 
